@@ -1,0 +1,38 @@
+:host {
+    height: 100%;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: lightgray;
+    height: 100%;
+}
+
+.search__count {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+
+    .search__filter {
+        width: 25%;
+    }
+
+    .search__results {
+        width: 75%;
+    }
+}
+
+.search__filterblock {
+    h4 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: #4d4d4d;
+    }
+}

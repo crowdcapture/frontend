@@ -1,0 +1,17 @@
+.username {
+    margin: 0;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 20px 0;
+}
+
+.projects__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 22px;
+}

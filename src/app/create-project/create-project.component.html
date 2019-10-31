@@ -1,0 +1,52 @@
+<div class="modal-background"></div>
+
+<div class="modal">
+    <div class="modal-body">
+        <div class="create-project">
+            <h1>Create project</h1>
+
+            <form>
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name" name="name">
+        
+                <label for="description">Description</label>
+                <textarea name="description" id="" cols="30" rows="5" placeholder="Describe why you are building this dataset."></textarea>
+        
+                <label for="instructions">Upload instructions</label>
+                <textarea name="instrcutions" id="" cols="30" rows="5" placeholder="Describe what rules your images must abide to. This will be used to validate images."></textarea>
+        
+                <label for="tags">Add tags</label>
+                <input type="text" name="tags" placeholder="Add up to 3 tags that describe your project">
+        
+                <div class="tags">
+                    <span class="tag">cars</span>
+                    <span class="tag">traffic</span>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="resolution" name="resolution" [(ngModel)]="resolution">
+                    <label for="resolution">Images in this dataset have a minimum resolution</label>
+                </div>
+
+                <div class="create-project__resolution" *ngIf="resolution">
+                    <span>It is not possible to change the resulution afterwards.</span>
+
+                    <div class="input-group">
+                        <input type="number" placeholder="Minimum width">
+                        <input type="number" placeholder="Minimum height">
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="permission">
+                    <label for="permission">I understand that the data in this dataset will be open and that every logged in user can download it.</label>
+                </div>
+
+                <div class="create-project__nav">
+                    <button class="button--line">Cancel</button>
+                    <button class="end">Create project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

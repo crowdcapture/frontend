@@ -1,0 +1,68 @@
+.project {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project__name {
+    font-size: 28px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+
+.project__details {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+    }
+}
+
+.project__actions {
+    display: flex;
+
+    button {
+        margin-right: 10px;
+    }
+}
+
+.project__meta {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+
+    h3 {
+        font-weight: 700;
+        color: #4d4d4d;
+    }
+
+    .project__meta--end {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            margin-right: 20px;
+        }
+    }
+}
+
+.project__masonry {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+
+    img {
+        flex: auto;
+        height: 250px;
+        min-width: 150px;
+        margin: 5px;
+        object-fit: cover;
+    }
+}
+

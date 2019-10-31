@@ -1,0 +1,32 @@
+:host {
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.project__name {
+    margin: 0;
+    font-weight: 400;
+}
+
+.project__stats {
+    margin: 0;
+    margin-top: 20px;
+}
+
+.project__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.project__end {
+    margin-left: auto;
+}

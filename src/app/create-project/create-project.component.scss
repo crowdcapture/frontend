@@ -1,0 +1,57 @@
+.create-project {
+    padding: 20px;
+
+    h1 {
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea {
+        border: 2px solid lightgray;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 14px;
+        padding: 4px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        color: #4d4d4d;
+    }
+}
+
+.tags {
+    margin-bottom: 10px;
+}
+
+.create-project__nav {
+    display: flex;
+    margin-top: 20px;
+}
+
+.create-project__resolution {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    span {
+        color: #4d4d4d;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+.input-group {
+    display: flex;
+
+    input {
+        margin-right: 10px;
+    }
+}

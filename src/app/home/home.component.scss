@@ -1,0 +1,36 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 75px 0;
+}
+
+.hero__title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.hero__subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 30px 0;
+}
+
+.hero__text {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 20px 0;
+}
+
+.projects__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 22px;
+}

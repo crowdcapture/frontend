@@ -1,0 +1,30 @@
+:host {
+    margin: auto auto 0 auto;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+}
+
+.footer__title {
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+.footer__body {
+    margin-left: 20px;
+
+    a {
+        margin-right: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #4d4d4d;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

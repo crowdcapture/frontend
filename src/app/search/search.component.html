@@ -1,0 +1,29 @@
+<div class="search">
+    <div class="container al">
+        <div class="search__count">
+            <p>2 results for "car"</p>
+        </div>
+
+        <div class="row">
+            <div class="search__filter">
+                <div class="search__filterblock">
+                    <h4>Created by</h4>
+                    <div class="radio">
+                        <input type="radio" name="createdby" id="me">
+                        <label for="me">Me</label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="createdby" id="anyone">
+                        <label for="anyone">Anyone</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search__results">
+                <app-project [name]="'Cars in the city'" [contributors]="1203" [images]="444" [id]="230"></app-project>
+                <app-project [name]="'License plates on cars'" [contributors]="201" [images]="839" [id]="811"></app-project>
+            </div>
+        </div>
+    </div>
+</div>
