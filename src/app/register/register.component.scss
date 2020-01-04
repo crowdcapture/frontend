@@ -1,0 +1,122 @@
+:host {
+    height: 100%;
+    display: flex;
+}
+
+.app-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: #4D4D4D;
+}
+
+.register-block {
+    flex-direction: column;
+    display: flex;
+    background-color: white;
+    width: 35%;
+    border: 2px solid lightgray;
+    margin-top: 20px;
+}
+
+.forgot-block {
+    margin-top: 10px;
+    font-size: 12px;
+
+    a {
+        color: #333;
+    }
+}
+
+.form-block {
+    margin: 20px;
+
+    h2 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-top: 10px;
+    }
+
+    input, textarea {
+        margin-top: 10px;
+        border: 2px solid lightgray;
+        padding: 12px 10px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #A7A9C0;
+        }
+
+        &.is-invalid {
+            border: 2px solid #D97878;
+        }
+    }
+
+    .invalid-feedback {
+        color: #D97878;
+        margin: 10px 0;
+    }
+}
+
+.form-error {
+    display: flex;
+    background-color: #D97878;
+    color: white;
+    padding: 0 20px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.form-submit {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        padding: 12px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    
+        &:hover:enabled {
+            background-color: darkgray;
+        }
+
+        &:disabled {
+            background-color: #F0F0F0;
+        }
+    
+        i {
+            font-size: 24px;
+        }
+    }
+
+    a {
+        text-align: center;
+        margin-top: 10px;
+        color: #333;
+    }
+}
+
+.btn-group {
+    display: flex;
+    width: 100%;
+
+    .main {
+        margin-left: auto;
+    }
+}

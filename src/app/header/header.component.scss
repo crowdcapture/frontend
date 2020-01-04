@@ -37,14 +37,19 @@
 }
 
 .menu__search {
-    margin-left: 10px;
-    height: 35px;
-    box-sizing: border-box;
-    border: 2px solid lightgray;
-    padding: 8px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
-    color: gray;
+    display: flex;
+
+    input {
+        margin-left: 10px;
+        height: 35px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-right: none;
+        padding: 8px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        color: gray;
+    }
 }
 
 .menu__end {

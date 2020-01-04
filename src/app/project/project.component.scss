@@ -15,6 +15,14 @@
 .project__name {
     margin: 0;
     font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .project__stats {

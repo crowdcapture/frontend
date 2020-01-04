@@ -8,11 +8,17 @@ import { UserOverviewComponent } from './user-overview/user-overview.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { SearchComponent } from './search/search.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+
+  {
+    path: 'upload',
+    component: UploadComponent
   },
   {
     path: 'register',

@@ -7,12 +7,21 @@
         <div class="menu__body">
             <a routerLink="/about">About</a>
             <a routerLink="/projects">Projects</a>
-            <input type="text" placeholder="Search projects" class="menu__search">
+
+            <div class="menu__search">
+                <input type="text" placeholder="Search projects">
+                <button>Search</button>
+            </div>
         </div>
 
-        <div class="menu__end">
+        <div class="menu__end" *ngIf="!user">
             <button routerLink="/register" class="button--line">Sign Up</button>
             <button routerLink="/login" class="button--fill ml">Log in</button>
+        </div>
+
+        <div class="menu__end" *ngIf="user">
+            <span>{{ user.username }}</span>
+            <button (click)="logout()" class="button--fill ml">Log out</button>
         </div>
     </div>
 </nav>
