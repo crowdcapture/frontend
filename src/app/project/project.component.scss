@@ -26,8 +26,13 @@
 }
 
 .project__stats {
-    margin: 0;
-    margin-top: 20px;
+    display: flex;
+
+    span {
+        margin: 0;
+        margin-top: 20px;
+        margin-right: 5px;
+    }
 }
 
 .project__body {

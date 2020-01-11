@@ -1,0 +1,7 @@
+<section class="projects">
+    <div class="container al">
+        <h2 class="projects__title">All projects</h2>
+
+        <app-project *ngFor="let project of projects" [name]="project.title" [images]="project.image_count" [id]="project.id"></app-project>
+    </div>
+</section>

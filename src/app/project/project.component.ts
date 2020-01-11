@@ -8,12 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProjectComponent implements OnInit {
   @Input() name: string;
   @Input() id: string;
-  @Input() contributors: number;
+  @Input() contributors?: number;
   @Input() images: number;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

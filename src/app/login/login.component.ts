@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public loading = false;
   public error: string;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   get f() {
-    return this.loginForm.controls; 
+    return this.loginForm.controls;
   }
 
   onSubmit() {
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit {
       password: this.f.password.value
     };
 
-    this.httpClient.post('http://localhost:3000/v1/login', body)
+    this.httpClient.post(`${environment.url}/login`, body)
       .subscribe(
         (result: User) => {
           if (result) {

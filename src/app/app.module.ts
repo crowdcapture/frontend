@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProjectComponent } from './project/project.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { ProjectAllComponent } from './project-all/project-all.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserService } from './services/user.service';
     CreateProjectComponent,
     HeaderComponent,
     FooterComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProjectAllComponent
   ],
   imports: [
     BrowserModule,

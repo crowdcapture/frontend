@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('onit');
-    
+
     this.userSub = this.userService.getUserObservable().subscribe((user) => {
       this.user = user;
     });

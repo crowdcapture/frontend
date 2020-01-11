@@ -9,6 +9,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { SearchComponent } from './search/search.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { UploadComponent } from './upload/upload.component';
+import { ProjectAllComponent } from './project-all/project-all.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'project/:projectId',
     component: ProjectOverviewComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectAllComponent
   },
   {
     path: 'user/:userId',
