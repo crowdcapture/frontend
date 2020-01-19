@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProjectAllComponent } from './project-all/project-all.component';
+import { AccountCreatedComponent } from './account-created/account-created.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'account-created',
+    component: AccountCreatedComponent
   },
   {
     path: 'home',

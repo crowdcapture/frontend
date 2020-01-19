@@ -20,6 +20,7 @@ import { ProjectComponent } from './project/project.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { ProjectAllComponent } from './project-all/project-all.component';
+import { AccountCreatedComponent } from './account-created/account-created.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProjectAllComponent } from './project-all/project-all.component';
     HeaderComponent,
     FooterComponent,
     ProjectComponent,
-    ProjectAllComponent
+    ProjectAllComponent,
+    AccountCreatedComponent
   ],
   imports: [
     BrowserModule,
