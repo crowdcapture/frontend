@@ -11,6 +11,8 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { UploadComponent } from './upload/upload.component';
 import { ProjectAllComponent } from './project-all/project-all.component';
 import { AccountCreatedComponent } from './account-created/account-created.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ConfirmationDoneComponent } from './confirmation-done/confirmation-done.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'account-created',
     component: AccountCreatedComponent
+  },
+  {
+    path: 'confirmation/:token',
+    component: ConfirmationComponent
+  },
+  {
+    path: 'confirmation-done',
+    component: ConfirmationDoneComponent
   },
   {
     path: 'home',

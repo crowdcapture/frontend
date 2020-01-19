@@ -51,6 +51,14 @@ button {
     align-items: center;
 }
 
+.button--group {
+    display: flex;
+    
+    button {
+        margin-right: 20px;
+    }
+}
+
 .tag {
     margin-right: 6px;
     background-color: gray;
@@ -66,6 +74,10 @@ button {
 
 .mr {
     margin-right: 20px;
+}
+
+.mt {
+    margin-top: 20px;
 }
 
 .mt-40 {

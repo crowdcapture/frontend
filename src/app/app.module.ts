@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { ProjectAllComponent } from './project-all/project-all.component';
 import { AccountCreatedComponent } from './account-created/account-created.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ConfirmationDoneComponent } from './confirmation-done/confirmation-done.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AccountCreatedComponent } from './account-created/account-created.compo
     FooterComponent,
     ProjectComponent,
     ProjectAllComponent,
-    AccountCreatedComponent
+    AccountCreatedComponent,
+    ConfirmationComponent,
+    ConfirmationDoneComponent
   ],
   imports: [
     BrowserModule,

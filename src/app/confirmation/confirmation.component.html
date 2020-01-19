@@ -1,0 +1,12 @@
+<div class="app-confirmation">
+    <div class="loading" *ngIf="loading && !error">
+        <p>Loading...</p>
+    </div>
+
+    <div class="error" *ngIf="error && !loading">
+        <h2>Something went wrong</h2>
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+        <button routerLink="/home" class="mt">Home</button>
+    </div>
+</div>
