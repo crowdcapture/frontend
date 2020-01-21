@@ -23,6 +23,10 @@ import { ProjectAllComponent } from './project-all/project-all.component';
 import { AccountCreatedComponent } from './account-created/account-created.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ConfirmationDoneComponent } from './confirmation-done/confirmation-done.component';
+import { ResetComponent } from './reset/reset.component';
+import { AccountResetComponent } from './account-reset/account-reset.component';
+import { PasswordComponent } from './password/password.component';
+import { AccountPasswordComponent } from './account-password/account-password.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { ConfirmationDoneComponent } from './confirmation-done/confirmation-done
     ProjectAllComponent,
     AccountCreatedComponent,
     ConfirmationComponent,
-    ConfirmationDoneComponent
+    ConfirmationDoneComponent,
+    ResetComponent,
+    AccountResetComponent,
+    PasswordComponent,
+    AccountPasswordComponent
   ],
   imports: [
     BrowserModule,

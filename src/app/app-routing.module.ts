@@ -13,6 +13,10 @@ import { ProjectAllComponent } from './project-all/project-all.component';
 import { AccountCreatedComponent } from './account-created/account-created.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ConfirmationDoneComponent } from './confirmation-done/confirmation-done.component';
+import { AccountResetComponent } from './account-reset/account-reset.component';
+import { ResetComponent } from './reset/reset.component';
+import { PasswordComponent } from './password/password.component';
+import { AccountPasswordComponent } from './account-password/account-password.component';
 
 const routes: Routes = [
   {
@@ -29,8 +33,24 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'reset',
+    component: ResetComponent
+  },
+  {
+    path: 'password/:token',
+    component: PasswordComponent
+  },
+  {
+    path: 'account-password',
+    component: AccountPasswordComponent
+  },
+  {
     path: 'account-created',
     component: AccountCreatedComponent
+  },
+  {
+    path: 'account-reset',
+    component: AccountResetComponent
   },
   {
     path: 'confirmation/:token',

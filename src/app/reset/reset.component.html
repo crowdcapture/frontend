@@ -1,0 +1,26 @@
+<div class="app-reset">
+    <div class="reset-block">
+        <div class="form-block">
+            <h2>Reset your account</h2>
+
+            <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Email address*</label>
+                    <input type="email" placeholder="Your email address" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+                    <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email address is a required field</div>
+                        <div *ngIf="f.email.errors.email">Please fill in a valid email address</div>
+                    </div>
+                </div>
+
+                <div class="form-error" *ngIf="error">
+                    <p>{{ error }}</p>
+                </div>
+
+                <div class="form-submit">
+                    <button [disabled]="loading">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
