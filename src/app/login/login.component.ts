@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 import { environment } from '../../environments/environment';
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
     private userService: UserService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -54,7 +55,13 @@ export class LoginComponent implements OnInit {
 
             this.userService.setUser(result);
 
-            this.router.navigate(['/home']);
+            const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+
+            if (returnUrl) {
+              this.router.navigate([returnUrl]);
+            } else {
+              this.router.navigate(['/home']);
+            }
           }
         },
         error => {

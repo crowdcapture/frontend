@@ -17,7 +17,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectComponent } from './project/project.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { ProjectAllComponent } from './project-all/project-all.component';
 import { AccountCreatedComponent } from './account-created/account-created.component';
@@ -27,6 +27,8 @@ import { ResetComponent } from './reset/reset.component';
 import { AccountResetComponent } from './account-reset/account-reset.component';
 import { PasswordComponent } from './password/password.component';
 import { AccountPasswordComponent } from './account-password/account-password.component';
+import { AuthGuard } from './services/auth.guard';
+import { JwtInterceptor } from './services/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { AccountPasswordComponent } from './account-password/account-password.co
     ReactiveFormsModule,
   ],
   providers: [
-    UserService
+    UserService,
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

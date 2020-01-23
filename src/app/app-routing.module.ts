@@ -17,6 +17,7 @@ import { AccountResetComponent } from './account-reset/account-reset.component';
 import { ResetComponent } from './reset/reset.component';
 import { PasswordComponent } from './password/password.component';
 import { AccountPasswordComponent } from './account-password/account-password.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -86,6 +87,7 @@ const routes: Routes = [
   },
   {
     path: 'create',
+    canActivate: [AuthGuard],
     component: CreateProjectComponent
   },
   {
