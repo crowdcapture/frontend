@@ -118,7 +118,7 @@ button {
     box-sizing: border-box;
     border: 2px solid lightgray;
 
-    &:hover {
+    &:hover:enabled {
         cursor: pointer;
         background-color: darkgray;
         border: 2px solid darkgray;

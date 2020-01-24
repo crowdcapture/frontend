@@ -5,46 +5,55 @@
         <div class="create-project">
             <h1>Create project</h1>
 
-            <form>
-                <label for="name">Name</label>
-                <input type="text" placeholder="Name" name="name">
-        
-                <label for="description">Description</label>
-                <textarea name="description" id="" cols="30" rows="5" placeholder="Describe why you are building this dataset."></textarea>
-        
-                <label for="instructions">Upload instructions</label>
-                <textarea name="instrcutions" id="" cols="30" rows="5" placeholder="Describe what rules your images must abide to. This will be used to validate images."></textarea>
-        
-                <label for="tags">Add tags</label>
-                <input type="text" name="tags" placeholder="Add up to 3 tags that describe your project">
-        
-                <div class="tags">
-                    <span class="tag">cars</span>
-                    <span class="tag">traffic</span>
+            <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="title">Title*</label>
+                    <input type="text" placeholder="Title" name="title" formControlName="title">
+                    <div *ngIf="f.title.touched && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Project title is a required field.</div>
+                        <div *ngIf="f.title.errors.maxlength">The maximum length of the title is 64 characters.</div>
+                    </div>
                 </div>
 
-                <div class="checkbox">
-                    <input type="checkbox" id="resolution" name="resolution" [(ngModel)]="resolution">
-                    <label for="resolution">Images in this dataset have a minimum resolution</label>
+                <div class="form-group">
+                    <label for="description">Description*</label>
+                    <textarea name="description" cols="30" rows="5" placeholder="Describe why you are building this dataset." formControlName="description"></textarea>
+                    <div *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Project description is a required field.</div>
+                        <div *ngIf="f.description.errors.maxlength">The maximum length of the description is {{f.description.errors.maxlength.requiredLength}} characters, it is {{f.description.errors.maxlength.actualLength}} characters now.</div>
+                    </div>
                 </div>
 
-                <div class="create-project__resolution" *ngIf="resolution">
-                    <span>It is not possible to change the resulution afterwards.</span>
-
-                    <div class="input-group">
-                        <input type="number" placeholder="Minimum width">
-                        <input type="number" placeholder="Minimum height">
+                <div class="form-group">
+                    <label for="instructions">Upload instructions</label>
+                    <textarea name="instructions" cols="30" rows="5" placeholder="Describe what rules your images must abide to. This will be used by other users to validate images." formControlName="instruction"></textarea>
+                    <div *ngIf="f.instruction.touched && f.instruction.errors" class="invalid-feedback">
+                        <div *ngIf="f.instruction.errors.maxlength">The maximum length of the instruction is {{f.instruction.errors.maxlength.requiredLength}} characters, it is {{f.instruction.errors.maxlength.actualLength}} characters now.</div>
                     </div>
                 </div>
 
                 <div class="checkbox">
-                    <input type="checkbox" id="permission">
-                    <label for="permission">I understand that the data in this dataset will be open and that every logged in user can download it.</label>
+                    <input type="checkbox" id="resolution" name="resolution" [(ngModel)]="resolution" [ngModelOptions]="{standalone: true}">
+                    <label for="resolution">Images in this dataset have a minimum resolution</label>
+                </div>
+
+                <div class="create-project__resolution" *ngIf="resolution">
+                    <span>It is not possible to change the minimum resulution afterwards.</span>
+
+                    <div class="input-group">
+                        <input type="number" placeholder="Minimum width (px)" formControlName="minWidth">
+                        <input type="number" placeholder="Minimum height (px)" formControlName="minHeight">
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="permission" [(ngModel)]="permission" [ngModelOptions]="{standalone: true}">
+                    <label for="permission">I understand that the data in this dataset will be open and that every logged in user will be able to download it.</label>
                 </div>
 
                 <div class="create-project__nav">
-                    <button class="button--line">Cancel</button>
-                    <button class="end">Create project</button>
+                    <button class="button--line" routerLink="/home">Cancel</button>
+                    <button class="end" [disabled]="!permission">Create project</button>
                 </div>
             </form>
         </div>
