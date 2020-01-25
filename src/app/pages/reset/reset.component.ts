@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../models/user.model';
-import { environment } from '../../environments/environment';
+import { User } from '../../models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-reset',
