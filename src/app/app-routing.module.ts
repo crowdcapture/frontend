@@ -24,11 +24,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-
-  {
-    path: 'upload',
-    component: UploadComponent
-  },
   {
     path: 'register',
     component: RegisterComponent
@@ -78,12 +73,18 @@ const routes: Routes = [
     component: UserOverviewComponent
   },
   {
-    path: 'my-projects',
-    component: MyProjectsComponent
-  },
-  {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'upload',
+    canActivate: [AuthGuard],
+    component: UploadComponent
+  },
+  {
+    path: 'my-projects',
+    canActivate: [AuthGuard],
+    component: MyProjectsComponent
   },
   {
     path: 'create',

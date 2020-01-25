@@ -50,6 +50,15 @@
     }
 }
 
+.project__no-images {
+    display: flex;
+    width: 100%;
+    background-color: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
 .project__masonry {
     display: flex;
     flex-flow: row wrap;

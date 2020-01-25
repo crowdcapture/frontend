@@ -1,15 +1,13 @@
-<div class="project">
+<div class="project" *ngIf="project">
     <div class="container al">
-        <h1 class="project__name">Detecting sigarette butts</h1>
+        <h1 class="project__name" *ngIf="project.title">{{ project.title }}</h1>
 
         <div class="project__details">
-            <span class="tag">trash</span>
-            <span class="tag">sigarettes</span>
-            <p>made by pcmill</p>
+            <span class="tag" routerLink="/user/{{project.created_by}}" *ngIf="project.username">made by {{ project.username }}</span>
         </div>
 
-        <p class="project__description">
-            Trash is everywhere but especially sigarette butts. Many scientist believe sigarette butts to be the most prevalent sort of trash. With this project I want to built up a dataset that makes it possible to detect sigarette butts. The beautifull thing is almost everyone can contribute to this project by simply going outside and taking some images.
+        <p class="project__description" *ngIf="project.description">
+            {{ project.description }}
         </p>
 
         <div class="project__actions">
@@ -20,14 +18,20 @@
         <div class="project__meta">
             <h3>Example images</h3>
 
-            <div class="project__meta--end">
-                <h3>Validated images (2049 / 3056)</h3>
-                <button>Download dataset</button>
+            <div class="project__meta--end" *ngIf="images">
+                <h3>Validated images ({{images.imagesValidated}} / {{images.imagesTotal}})</h3>
+
+                <span *ngIf="!project.latest_bundle_url">No download available yet</span>
+                <button *ngIf="project.latest_bundle_url" type="submit" (click)="download()">Download dataset</button>
             </div>
         </div>
+
+        <div class="project__no-images" *ngIf="images && images.images.length === 0">
+            <p>You can be the first to upload images to this project!</p>
+        </div>
     </div>
-    
-    <div class="project__masonry">
+
+    <div class="project__masonry" *ngIf="images && images.images.length > 0">
         <img src="../../assets/examples/IMG_0267.jpeg" alt="">
         <img src="../../assets/examples/IMG_0271.JPEG" alt="">
         <img src="../../assets/examples/imageedit_1_6004022743.jpg" alt="">
