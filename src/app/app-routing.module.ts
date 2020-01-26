@@ -19,6 +19,7 @@ import { PasswordComponent } from './pages/password/password.component';
 import { AccountPasswordComponent } from './pages/account-password/account-password.component';
 import { AuthGuard } from './services/auth.guard';
 import { FaqComponent } from './pages/faq/faq.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 const routes: Routes = [
   {
@@ -82,7 +83,11 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'upload',
+    path: 'privacy',
+    component: PrivacyComponent
+  },
+  {
+    path: 'upload/:projectId',
     canActivate: [AuthGuard],
     component: UploadComponent
   },

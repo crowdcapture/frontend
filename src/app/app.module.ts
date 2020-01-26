@@ -29,6 +29,7 @@ import { AccountPasswordComponent } from './pages/account-password/account-passw
 import { AuthGuard } from './services/auth.guard';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { FaqComponent } from './pages/faq/faq.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { FaqComponent } from './pages/faq/faq.component';
     AccountResetComponent,
     PasswordComponent,
     AccountPasswordComponent,
-    FaqComponent
+    FaqComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
