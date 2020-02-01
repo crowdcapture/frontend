@@ -11,7 +11,7 @@
         </p>
 
         <div class="project__actions">
-            <button>Upload images</button>
+            <button routerLink="/upload/{{project.id}}">Upload images</button>
             <button class="button--line">Validate images</button>
         </div>
 
@@ -32,16 +32,6 @@
     </div>
 
     <div class="project__masonry" *ngIf="images && images.images.length > 0">
-        <img src="../../assets/examples/IMG_0267.jpeg" alt="">
-        <img src="../../assets/examples/IMG_0271.JPEG" alt="">
-        <img src="../../assets/examples/imageedit_1_6004022743.jpg" alt="">
-        <img src="../../assets/examples/IMG_0273.JPEG" alt="">
-        <img src="../../assets/examples/cigarette-butts.jpg" alt="">
-        <img src="../../assets/examples/IMG_0277.JPEG" alt="">
-        <img src="../../assets/examples/IMG_0278.JPEG" alt="">
-        <img src="../../assets/examples/IMG_0274.JPEG" alt="">
-        <img src="../../assets/examples/IMG_0275.JPEG" alt="">
-        <img src="../../assets/examples/IMG_0276.JPEG" alt="">
-        <img src="../../assets/examples/IMG_0279.JPEG" alt="">
+        <img *ngFor="let image of images.images" src="{{image.url}}" alt="">
     </div>
 </div>
