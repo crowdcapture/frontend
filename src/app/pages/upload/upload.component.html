@@ -2,7 +2,22 @@
     <div class="container al">
         <h1 class="upload__title">Upload images</h1>
 
-        <input type="file" name="upload" multiple="multiple" (change)="fileChange($event)">
+        <input type="file" name="upload" multiple="multiple" (change)="fileChange(file.files)" #file accept="image/*">
+
+        <div class="upload__masonry" *ngIf="uploadedFiles.length > 0">
+            <div class="file" *ngFor="let file of uploadedFiles">
+                <div class="file__info" *ngIf="!file.uploading && !file.uploaded">
+                    <span class="file__delete" (click)="deleteImage(file)">Remove image</span>
+                </div>
+
+                <div class="file__overlay" *ngIf="file.uploading || file.uploaded">
+                    <span *ngIf="file.uploading">Uploading</span>
+                    <span *ngIf="file.uploaded">Uploaded</span>
+                </div>
+
+                <img [src]="file.preview" alt="">
+            </div>
+        </div>
 
         <div class="permissions">
             <div class="checkbox">
@@ -16,6 +31,6 @@
             </div>
         </div>
 
-        <button (click)="upload()" [disabled]="!permission || !owner">Upload files</button>
+        <button (click)="upload()" [disabled]="(!permission || !owner) || uploadedFiles.length === 0">Upload files</button>
     </div>
 </div>

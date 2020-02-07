@@ -3,6 +3,10 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+
+    button {
+        margin-bottom: 20px;
+    }
 }
 
 .upload__title {
@@ -13,4 +17,55 @@
 
 .permissions {
     margin: 20px 0;
+}
+
+.upload__masonry {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    
+    .file {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        width: calc(33.3% - 13.3px);
+        position: relative;
+
+        img {
+            flex: auto;
+            height: 250px;
+            min-width: 100px;
+            object-fit: cover;
+        }
+    }
+}
+
+.file__overlay {
+    position: absolute;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: .3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    span {
+        background-color: darkgray;
+        padding: 10px;
+    }
+}
+
+.file__info {
+    background-color: lightgray;
+    padding: 5px;
+}
+
+.file__delete {
+    cursor: pointer;
 }
