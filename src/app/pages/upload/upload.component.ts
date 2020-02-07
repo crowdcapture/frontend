@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit, OnDestroy {
-  private uploadedFiles: any[] = [];
   private projectId: string;
   private project: any;
   private projectSub: Subscription;
 
+  public uploadedFiles: any[] = [];
   public permission: boolean;
   public owner: boolean;
 
