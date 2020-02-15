@@ -15,7 +15,7 @@ export class MyProjectsComponent implements OnInit, OnDestroy {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.projectsSub = this.httpClient.get(`${environment.url}/projects`).subscribe((result: any) => {
+    this.projectsSub = this.httpClient.get(`${environment.url}/projects/my`).subscribe((result: any) => {
       this.projects = result.projects;
     });
   }

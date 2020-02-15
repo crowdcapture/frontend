@@ -2,6 +2,10 @@
     <div class="container al">
         <h2 class="projects__title">My projects</h2>
 
+        <div class="projects__none" *ngIf="projects.length === 0">
+            <p>You haven't made any projects yet.</p>
+        </div>
+
         <app-project *ngFor="let project of projects" [name]="project.title" [images]="project.image_count" [id]="project.id"></app-project>
     </div>
 </section>
