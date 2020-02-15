@@ -63,6 +63,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     for (const image of this.uploadedFiles) {
       if (!image.uploading && !image.uploaded && !image.toolarge) {
         image.uploading = true;
+        image.error = null;
 
         const formData = new FormData();
         formData.append('fileArray', image.file, image.file.name);
