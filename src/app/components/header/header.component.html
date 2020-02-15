@@ -8,10 +8,10 @@
             <a routerLink="/projects">All Projects</a>
             <a routerLink="/my-projects" *ngIf="user">My Projects</a>
 
-            <div class="menu__search">
-                <input type="text" placeholder="Search projects">
+            <form class="menu__search" (ngSubmit)="search()">
+                <input name="query" type="text" placeholder="Search projects" [(ngModel)]="query">
                 <button>Search</button>
-            </div>
+            </form>
         </div>
 
         <div class="menu__end" *ngIf="!user">

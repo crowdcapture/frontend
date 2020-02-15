@@ -79,7 +79,7 @@ const routes: Routes = [
     component: UserOverviewComponent
   },
   {
-    path: 'search',
+    path: 'search/:query',
     component: SearchComponent
   },
   {

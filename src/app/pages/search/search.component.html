@@ -1,7 +1,7 @@
 <div class="search">
     <div class="container al">
-        <div class="search__count">
-            <p>2 results for "car"</p>
+        <div class="search__count" *ngIf="searchResult">
+            <p>{{searchResult.result.length}} results for "{{query}}"</p>
         </div>
 
         <div class="row">
@@ -20,9 +20,8 @@
                 </div>
             </div>
 
-            <div class="search__results">
-                <app-project [name]="'Cars in the city'" [contributors]="1203" [images]="444" [id]="230"></app-project>
-                <app-project [name]="'License plates on cars'" [contributors]="201" [images]="839" [id]="811"></app-project>
+            <div class="search__results" *ngIf="searchResult && searchResult.result.length > 0">
+                <app-project *ngFor="let result of searchResult.result" [name]="result.title" [images]="result.image_count" [id]="result.id"></app-project>
             </div>
         </div>
     </div>
