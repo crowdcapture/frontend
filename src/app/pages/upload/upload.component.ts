@@ -48,7 +48,8 @@ export class UploadComponent implements OnInit, OnDestroy {
               width: image.width,
               height: image.height,
               uploading: false,
-              uploaded: false
+              uploaded: false,
+              toolarge: files[i].size > 25000000
             };
 
             this.uploadedFiles.push(imageObj);
@@ -60,7 +61,7 @@ export class UploadComponent implements OnInit, OnDestroy {
 
   async upload() {
     for (const image of this.uploadedFiles) {
-      if (!image.uploading && !image.uploaded) {
+      if (!image.uploading && !image.uploaded && !image.toolarge) {
         image.uploading = true;
         const formData = new FormData();
         formData.append('fileArray', image.file, image.file.name);

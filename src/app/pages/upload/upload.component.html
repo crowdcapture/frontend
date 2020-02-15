@@ -10,9 +10,15 @@
                     <span class="file__delete" (click)="deleteImage(file)">Remove image</span>
                 </div>
 
+                <div class="file__overlay-bg" *ngIf="file.uploading || file.uploaded"></div>
+
                 <div class="file__overlay" *ngIf="file.uploading || file.uploaded">
                     <span *ngIf="file.uploading">Uploading</span>
                     <span *ngIf="file.uploaded">Uploaded</span>
+                </div>
+
+                <div class="file__toolarge" *ngIf="file.toolarge">
+                    <span>Filesize is over the allowed 25MB</span>
                 </div>
 
                 <img [src]="file.preview" alt="">
