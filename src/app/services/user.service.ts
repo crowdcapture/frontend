@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +16,18 @@ export class UserService {
 
     getUserObservable(): Observable<User> {
         return this.user.asObservable();
+    }
+
+    isLoggedIn(): boolean {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        const jwt = new JwtHelperService();
+
+        if (user && !jwt.isTokenExpired(user.token)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     getUser() {

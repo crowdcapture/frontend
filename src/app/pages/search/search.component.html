@@ -6,17 +6,22 @@
 
         <div class="row">
             <div class="search__filter">
-                <div class="search__filterblock">
+                <div class="search__filterblock" *ngIf="loggedIn">
                     <h4>Created by</h4>
+
                     <div class="radio">
-                        <input type="radio" name="createdby" id="me">
+                        <input type="radio" name="createdby" value="me" [ngModel]="createdBy" (ngModelChange)="setCreatedBy('me')">
                         <label for="me">Me</label>
                     </div>
 
                     <div class="radio">
-                        <input type="radio" name="createdby" id="anyone">
+                        <input type="radio" name="createdby" value="anyone" [ngModel]="createdBy" (ngModelChange)="setCreatedBy('anyone')">
                         <label for="anyone">Anyone</label>
                     </div>
+                </div>
+
+                <div class="search__filter-loggedout" *ngIf="!loggedIn">
+                    <p>Please login to search your own projects.</p>
                 </div>
             </div>
 
