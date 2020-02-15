@@ -17,8 +17,12 @@
                     <span *ngIf="file.uploaded">Uploaded</span>
                 </div>
 
-                <div class="file__toolarge" *ngIf="file.toolarge">
+                <div class="file__error" *ngIf="file.toolarge">
                     <span>Filesize is over the allowed 25MB</span>
+                </div>
+
+                <div class="file__error" *ngIf="file.error">
+                    <span>{{ file.error }}</span>
                 </div>
 
                 <img [src]="file.preview" alt="">

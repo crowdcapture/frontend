@@ -63,13 +63,25 @@ export class UploadComponent implements OnInit, OnDestroy {
     for (const image of this.uploadedFiles) {
       if (!image.uploading && !image.uploaded && !image.toolarge) {
         image.uploading = true;
+
         const formData = new FormData();
         formData.append('fileArray', image.file, image.file.name);
 
-        await this.httpClient.post(`${environment.url}/project/${this.projectId}/upload`, formData).toPromise();
+        try {
+          await this.httpClient.post(`${environment.url}/project/${this.projectId}/upload`, formData).toPromise();
 
-        image.uploading = false;
-        image.uploaded = true;
+          image.uploading = false;
+          image.uploaded = true;
+        } catch (error) {
+          if (error.status === 400) {
+            image.error = error.error.message;
+          } else {
+            image.error = 'Something went wrong.';
+          }
+
+          image.uploading = false;
+          image.uploaded = false;
+        }
       }
     }
   }
