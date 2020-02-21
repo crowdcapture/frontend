@@ -1,0 +1,45 @@
+<div class="validate">
+    <div class="container al">
+        <h1 class="validate__title">Validate image</h1>
+
+        <div class="no-images" *ngIf="!image">
+            <p>At the moment there are no images that need to be validated, great job!</p>
+            <p>If you expected images to validate there might be two reasons you don't see them:</p>
+            <ul>
+                <li>Other users are working on them.</li>
+                <li>You can't validate your own images and therefore you don't see them here.</li>
+            </ul>
+        </div>
+
+        <div class="instruction" *ngIf="project && project.instruction">
+            <h4>Project instruction</h4>
+            <p>{{project.instruction}}</p>
+        </div>
+
+        <div class="image">
+            <img *ngIf="image && image.url" src="{{image.url}}" alt="">
+        </div>
+
+        <div class="validate__input" *ngIf="image">
+            <div class="radio">
+                <input type="radio" name="validation" value="true" [(ngModel)]="validatingPositive">
+                <label for="true">This image follows the project instructions and <a href="/faq">CrowdCapture rules</a>.</label>
+            </div>
+    
+            <div class="radio">
+                <input type="radio" name="validation" value="false" [(ngModel)]="validatingPositive">
+                <label for="false">I do not want to approve this image.</label>
+            </div>
+
+            <div class="validateReasons" *ngIf="reasons && validatingPositive === 'false'">
+                <h4>Indicate why you don't approve this image</h4>
+
+                <select id="validateReasons" [(ngModel)]="selectedReason">
+                    <option *ngFor="let reason of reasons" value="{{reason.id}}">{{reason.reason}}</option>
+                </select>
+            </div>
+        </div>
+
+        <button *ngIf="image" [disabled]="!validatingPositive" (click)="validateImage()">Submit</button>
+    </div>
+</div>

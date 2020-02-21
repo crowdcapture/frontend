@@ -1,0 +1,53 @@
+.validate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.validate__title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+
+.no-images {
+    color: grey;
+
+    p:first-child {
+        color: black;
+    }
+
+    p {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.instruction {
+    width: 100%;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+        max-width: 100%;
+        max-height: 50vh;
+    }
+}
+
+.validate__input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.validateReasons {
+    margin-left: 20px;
+    
+    h4 {
+        margin: 10px 0;
+    }
+}

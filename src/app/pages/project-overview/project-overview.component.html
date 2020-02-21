@@ -12,14 +12,15 @@
 
         <div class="project__actions">
             <button routerLink="/upload/{{project.id}}">Upload images</button>
-            <button class="button--line">Validate images</button>
+            <button routerLink="/validate/{{project.id}}" class="button--line">Validate images</button>
         </div>
 
         <div class="project__meta">
             <h3>Example images</h3>
 
             <div class="project__meta--end" *ngIf="images">
-                <h3>Validated images ({{images.imagesValidated}} / {{images.imagesTotal}})</h3>
+                <h3>Validated images {{images.imagesValidated}}</h3>
+                <h3>Waiting images {{images.imagesWaiting}}</h3>
 
                 <span *ngIf="!project.latest_bundle_url">No download available yet</span>
                 <button *ngIf="project.latest_bundle_url" type="submit" (click)="download()">Download dataset</button>

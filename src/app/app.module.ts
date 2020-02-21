@@ -30,6 +30,7 @@ import { AuthGuard } from './services/auth.guard';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { ValidateComponent } from './pages/validate/validate.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     PasswordComponent,
     AccountPasswordComponent,
     FaqComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    ValidateComponent
   ],
   imports: [
     BrowserModule,

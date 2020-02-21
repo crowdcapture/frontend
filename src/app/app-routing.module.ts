@@ -20,6 +20,7 @@ import { AccountPasswordComponent } from './pages/account-password/account-passw
 import { AuthGuard } from './services/auth.guard';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { ValidateComponent } from './pages/validate/validate.component';
 
 const routes: Routes = [
   {
@@ -100,6 +101,11 @@ const routes: Routes = [
     path: 'create',
     canActivate: [AuthGuard],
     component: CreateProjectComponent
+  },
+  {
+    path: 'validate/:projectId',
+    canActivate: [AuthGuard],
+    component: ValidateComponent
   },
   {
     path: '**',
