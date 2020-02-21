@@ -12,9 +12,9 @@ import { Subscription } from 'rxjs';
 })
 export class UploadComponent implements OnInit, OnDestroy {
   private projectId: string;
-  private project: any;
   private projectSub: Subscription;
 
+  public project: any;
   public uploadedFiles: any[] = [];
   public permission: boolean;
   public owner: boolean;

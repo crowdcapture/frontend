@@ -1,5 +1,13 @@
 <div class="upload">
     <div class="container al">
+        <div class="back">
+            <a routerLink="/project/{{project.id}}">
+                <i class="icon-keyboard_backspace"></i>
+
+                {{ project.title }}
+            </a>
+        </div>
+
         <h1 class="upload__title">Upload images</h1>
 
         <input type="file" name="upload" multiple="multiple" (change)="fileChange(file.files)" #file accept="image/jpeg,image/png">
@@ -41,6 +49,9 @@
             </div>
         </div>
 
-        <button (click)="upload()" [disabled]="(!permission || !owner) || uploadedFiles.length === 0">Upload files</button>
+        <button (click)="upload()" [disabled]="(!permission || !owner) || uploadedFiles.length === 0">
+            <i class="icon-file_upload"></i>
+            Upload files
+        </button>
     </div>
 </div>
