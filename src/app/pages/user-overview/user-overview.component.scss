@@ -1,5 +1,11 @@
 .username {
     margin: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+span {
+    margin-bottom: 20px;
 }
 
 .projects {
@@ -7,6 +13,7 @@
     justify-content: center;
     background-color: lightgray;
     padding: 20px 0;
+    min-height: calc(100vh - 136px);
 }
 
 .projects__title {
