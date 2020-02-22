@@ -26,7 +26,7 @@
             </div>
 
             <div class="search__results" *ngIf="searchResult && searchResult.result.length > 0">
-                <app-project *ngFor="let result of searchResult.result" [name]="result.title" [images]="result.image_count" [id]="result.id"></app-project>
+                <app-project *ngFor="let result of searchResult.result; trackBy: trackByFn" [name]="result.title" [images]="result.image_count" [id]="result.id"></app-project>
             </div>
         </div>
     </div>

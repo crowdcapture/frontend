@@ -59,6 +59,10 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.router.navigate([`/search/${encodeURI(this.query)}`], { queryParams: {createdBy: value} });
   }
 
+  trackByFn(index, item) {
+    return item.id;
+  }
+
   ngOnDestroy() {
     if (this.searchSub) {
       this.searchSub.unsubscribe();

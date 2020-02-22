@@ -20,6 +20,10 @@ export class ProjectAllComponent implements OnInit, OnDestroy {
     });
   }
 
+  trackByFn(index, item) {
+    return item.id;
+  }
+
   ngOnDestroy() {
     this.projectsSub.unsubscribe();
   }

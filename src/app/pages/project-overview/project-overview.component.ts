@@ -43,6 +43,10 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
     this.userService.getUser();
   }
 
+  trackByFn(index, item) {
+    return item.id;
+  }
+
   ngOnDestroy() {
     this.projectSub.unsubscribe();
     this.imageSub.unsubscribe();
