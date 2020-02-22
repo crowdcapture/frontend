@@ -31,6 +31,7 @@ import { JwtInterceptor } from './services/jwt.interceptor';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ValidateComponent } from './pages/validate/validate.component';
+import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ValidateComponent } from './pages/validate/validate.component';
     SearchComponent,
     UploadComponent,
     CreateProjectComponent,
+    EditProjectComponent,
     HeaderComponent,
     FooterComponent,
     ProjectComponent,

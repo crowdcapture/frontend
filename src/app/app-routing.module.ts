@@ -21,6 +21,7 @@ import { AuthGuard } from './services/auth.guard';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ValidateComponent } from './pages/validate/validate.component';
+import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 
 const routes: Routes = [
   {
@@ -101,6 +102,11 @@ const routes: Routes = [
     path: 'create',
     canActivate: [AuthGuard],
     component: CreateProjectComponent
+  },
+  {
+    path: 'edit/:projectId',
+    canActivate: [AuthGuard],
+    component: EditProjectComponent
   },
   {
     path: 'validate/:projectId',

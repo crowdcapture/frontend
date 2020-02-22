@@ -2,10 +2,10 @@
 
 <div class="modal">
     <div class="modal-body">
-        <div class="create-project">
-            <h1>Create project</h1>
+        <div class="edit-project" *ngIf="editForm">
+            <h1>Edit project</h1>
 
-            <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="title">Title*</label>
                     <input type="text" placeholder="Title" name="title" formControlName="title">
@@ -32,31 +32,9 @@
                     </div>
                 </div>
 
-                <div class="checkbox">
-                    <input type="checkbox" id="resolution" name="resolution" [(ngModel)]="resolution" [ngModelOptions]="{standalone: true}">
-                    <label for="resolution">Images in this dataset have a minimum resolution</label>
-                </div>
-
-                <div class="create-project__resolution" *ngIf="resolution">
-                    <span>It is not possible to change the minimum resulution afterwards.</span>
-
-                    <div class="input-group">
-                        <input type="number" placeholder="Minimum width (px)" formControlName="minWidth">
-                        <input type="number" placeholder="Minimum height (px)" formControlName="minHeight">
-                    </div>
-                </div>
-
-                <div class="checkbox">
-                    <input type="checkbox" id="permission" [(ngModel)]="permission" [ngModelOptions]="{standalone: true}">
-                    <label for="permission">I understand that the data in this dataset will be open and that every logged in user will be able to download it.</label>
-                </div>
-
-                <div class="create-project__nav">
-                    <button class="button--line" routerLink="/home">Cancel</button>
-                    <button class="end" [disabled]="!permission">
-                        <i class="icon-add"></i>
-                        Create project
-                    </button>
+                <div class="edit-project__nav">
+                    <button class="button--line" routerLink="/project/{{project.id}}">Cancel</button>
+                    <button class="end">Update project</button>
                 </div>
             </form>
         </div>

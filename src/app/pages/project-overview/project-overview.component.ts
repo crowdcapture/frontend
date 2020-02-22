@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { Subscription } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-project-overview',
@@ -13,12 +14,15 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
   public id: string;
   public project: any;
   public images: any;
+  public user: any;
 
   private projectSub: Subscription;
   private imageSub: Subscription;
+  private userSub: Subscription;
 
   constructor(
     private httpClient: HttpClient,
+    private userService: UserService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -31,11 +35,18 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
     this.imageSub = this.httpClient.get(`${environment.url}/images/${this.id}`).subscribe((images: any) => {
       this.images = images;
     });
+
+    this.userSub = this.userService.getUserObservable().subscribe((user) => {
+      this.user = user;
+    });
+
+    this.userService.getUser();
   }
 
   ngOnDestroy() {
     this.projectSub.unsubscribe();
     this.imageSub.unsubscribe();
+    this.userSub.unsubscribe();
   }
 
   download() {

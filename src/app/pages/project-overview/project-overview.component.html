@@ -15,7 +15,10 @@
                 <i class="icon-file_upload"></i>
                 Upload images
             </button>
+
             <button routerLink="/validate/{{project.id}}" class="button--line">Validate images</button>
+
+            <button routerLink="/edit/{{project.id}}" class="button--line" *ngIf="project.created_by === user.id">Edit project</button>
         </div>
 
         <div class="project__meta">
@@ -26,7 +29,11 @@
                 <h3>Waiting images {{images.imagesWaiting}}</h3>
 
                 <span *ngIf="!project.latest_bundle_url">No download available yet</span>
-                <button *ngIf="project.latest_bundle_url" type="submit" (click)="download()">Download dataset</button>
+
+                <button *ngIf="project.latest_bundle_url" type="submit" (click)="download()">
+                    <i class="icon-file_downloadget_app"></i>
+                    Download dataset
+                </button>
             </div>
         </div>
 
