@@ -33,6 +33,7 @@
     background-color: lightgray;
     margin-bottom: 20px;
     padding: 20px;
+    box-sizing: border-box;
 
     h4 {
         margin: 0 0 20px 0;
@@ -64,5 +65,18 @@
     
     h4 {
         margin: 10px 0;
+    }
+}
+
+.error {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: #D97878;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+
+    p {
+        margin: 0;
     }
 }

@@ -48,7 +48,11 @@
             </div>
         </div>
 
-        <button *ngIf="image" [disabled]="!validatingPositive" (click)="validateImage()">
+        <div class="error" *ngIf="errorMessage">
+            <p>{{ errorMessage }}</p>
+        </div>
+
+        <button *ngIf="image" [disabled]="!validatingPositive || blocked" (click)="validateImage()">
             <i class="icon-check"></i>
             Submit
         </button>

@@ -15,11 +15,14 @@ export class ValidateComponent implements OnInit, OnDestroy {
   public image: any;
   public validatingPositive: string;
   public selectedReason: string;
+  public errorMessage: string;
   public reasons: any;
+  public blocked = false;
 
   private projectSub: Subscription;
   private imageSub: Subscription;
   private reasonsSub: Subscription;
+  private timeOut: any;
 
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) {}
 
@@ -46,7 +49,15 @@ export class ValidateComponent implements OnInit, OnDestroy {
       .get(`${environment.url}/image/${this.id}/validate`)
       .subscribe((image: any) => {
         this.image = image.image[0];
+
+        if (this.image) {
+            this.setTimeout();
+        } else if (this.timeOut) {
+            clearTimeout(this.timeOut);
+        }
       });
+
+    this.setTimeout();
   }
 
   public validateImage() {
@@ -62,9 +73,20 @@ export class ValidateComponent implements OnInit, OnDestroy {
       });
   }
 
+  private setTimeout() {
+      this.timeOut = setTimeout(() => {
+          this.blocked = true;
+          this.errorMessage = 'After 15 minutes of inactivity you need to refresh to continue validating.';
+      }, 15 * 60000);
+  }
+
   ngOnDestroy() {
     this.projectSub.unsubscribe();
     this.imageSub.unsubscribe();
     this.reasonsSub.unsubscribe();
+
+    if (this.timeOut) {
+        clearTimeout(this.timeOut);
+    }
   }
 }
