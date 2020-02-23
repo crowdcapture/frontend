@@ -93,6 +93,12 @@
   span {
     background-color: darkgray;
     padding: 10px;
+    display: flex;
+    align-items: center;
+
+    i {
+        margin-right: 10px;
+    }
   }
 }
 
