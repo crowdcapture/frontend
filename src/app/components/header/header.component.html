@@ -20,12 +20,61 @@
 
         <div class="menu__end" *ngIf="!user">
             <button routerLink="/register" class="button--line">Register</button>
-            <button routerLink="/login" class="button--fill ml">Log in</button>
+            <button routerLink="/login" class="ml">Log in</button>
         </div>
 
         <div class="menu__end" *ngIf="user">
             <span>{{ user.username }}</span>
-            <button (click)="logout()" class="button--fill ml">Log out</button>
+
+            <button (click)="logout()" class="ml">
+                <i class="icon-logout"></i>
+                Log out
+            </button>
         </div>
     </div>
 </nav>
+
+<nav class="menu-mobile" role="navigation" aria-label="main navigation">
+    <a routerLink="/home" class="menu__title">
+        CrowdCapture
+    </a>
+
+    <button class="button--line" (click)="openMenu()">Menu</button>
+</nav>
+
+<div class="side-menu" [ngClass]="{'side-menu--open': mobileMenuOpen}">
+    <div class="side-menu__close" (click)="closeMenu()">
+        <span>
+            <i class="icon-clearclose"></i>
+            Close menu
+        </span>
+    </div>
+
+    <div class="side-menu__body">
+        <a routerLink="/projects">All Projects</a>
+        <a routerLink="/my-projects" *ngIf="user">My Projects</a>
+
+        <form class="menu__search" (ngSubmit)="search()">
+            <input name="query" type="text" placeholder="Search projects" [(ngModel)]="query">
+
+            <button>
+                <i class="icon-search"></i>
+                Search
+            </button>
+        </form>
+
+        <div *ngIf="!user">
+            <button routerLink="/register" class="button--line">Register</button>
+            <button routerLink="/login" class="ml">Log in</button>
+        </div>
+
+        <div class="side-menu__user" *ngIf="user">
+            <span>{{ user.username }}</span>
+
+            <button (click)="logout()" class="ml">
+                <i class="icon-logout"></i>
+                Log out
+            </button>
+        </div>
+    </div>
+</div>

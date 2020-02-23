@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   public user: any;
-  private userSub: Subscription;
   public query: string;
+  public mobileMenuOpen = false;
+
+  private userSub: Subscription;
+  private navSub: Subscription;
 
   constructor(
     private userService: UserService,
@@ -24,6 +27,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
 
     this.userService.getUser();
+
+    this.navSub = this.router.events.subscribe(() => {
+      this.mobileMenuOpen = false;
+    });
   }
 
   search() {
@@ -40,7 +47,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userService.logoutUser();
   }
 
+  openMenu() {
+    this.mobileMenuOpen = true;
+  }
+
+  closeMenu() {
+    this.mobileMenuOpen = false;
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
+    this.navSub.unsubscribe();
   }
 }
