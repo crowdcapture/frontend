@@ -17,7 +17,6 @@ export class UploadComponent implements OnInit, OnDestroy {
   public project: any;
   public uploadedFiles: any[] = [];
   public permission: boolean;
-  public owner: boolean;
 
   constructor(
     private httpClient: HttpClient,
@@ -55,8 +54,6 @@ export class UploadComponent implements OnInit, OnDestroy {
             this.uploadedFiles.push(imageObj);
           };
       }
-
-      console.log(this.uploadedFiles);
   }
 
   async upload() {

@@ -10,7 +10,12 @@
 
         <h1 class="upload__title">Upload images</h1>
 
-        <input type="file" name="upload" multiple="multiple" (change)="fileChange(file.files)" #file accept="image/jpeg,image/png">
+        <input #file class="upload__button" type="file" id="upload" name="upload" multiple="multiple" (change)="fileChange(file.files)" accept="image/jpeg,image/png">
+
+        <label for="upload">
+            <i class="icon-drive_folder_upload"></i>
+            Choose your images...
+        </label>
 
         <div class="upload__masonry" *ngIf="uploadedFiles.length > 0">
             <div class="file" *ngFor="let file of uploadedFiles">
@@ -39,17 +44,12 @@
 
         <div class="permissions">
             <div class="checkbox">
-                <input type="checkbox" id="owner" [(ngModel)]="owner" [ngModelOptions]="{standalone: true}">
-                <label for="permission">I hereby confirm that I am the owner of the images I am uploading.</label>
-            </div>
-    
-            <div class="checkbox">
                 <input type="checkbox" id="permission" [(ngModel)]="permission" [ngModelOptions]="{standalone: true}">
                 <label for="permission">I, the copyright holder of this work, irrevocably grant anyone the right to use these works under the <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">Creative Commons CC0 License</a>.</label>
             </div>
         </div>
 
-        <button (click)="upload()" [disabled]="(!permission || !owner) || uploadedFiles.length === 0">
+        <button (click)="upload()" [disabled]="!permission || uploadedFiles.length === 0">
             <i class="icon-file_upload"></i>
             Upload files
         </button>
