@@ -27,6 +27,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .back {
@@ -235,4 +236,16 @@ button {
 .modal-body {
     width: 60%;
     background-color: white;
+}
+
+@media screen and (max-width: 1044px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .modal-body {
+        width: 100%;
+        height: 100%;
+    }
 }

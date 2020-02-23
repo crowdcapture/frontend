@@ -34,3 +34,17 @@
     font-weight: 400;
     font-size: 22px;
 }
+
+@media screen and (max-width: 1044px) {
+    .hero {
+        padding: 35px 0;
+    }
+
+    .hero__title {
+        font-size: 24px;
+    }
+
+    .hero__subtitle {
+        font-size: 18px;
+    }
+}
