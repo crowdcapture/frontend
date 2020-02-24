@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
           this.loading = false;
 
           if (error) {
-            this.error = error.message;
+            this.error = error.error.message;
           } else {
             this.error = 'Something went wrong, try again later';
           }
