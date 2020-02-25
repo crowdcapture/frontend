@@ -120,11 +120,14 @@
         input {
             max-width: 65%;
             margin-left: 0;
+            margin-right: 0;
+            border-radius: 0;
             flex: 1;
         }
 
         button {
             max-width: 35%;
+            margin-left: 0;
             flex: 1;
         }
     }
