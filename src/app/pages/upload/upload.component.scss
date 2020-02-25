@@ -125,3 +125,11 @@
 .file__delete {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .upload__masonry {
+    .file {
+      width: 100%;
+    }
+  }
+}

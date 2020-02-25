@@ -48,3 +48,17 @@
         margin: 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+
+        .search__filter, .search__results {
+            width: 100%;
+        }
+
+        .search__filter {
+            margin-bottom: 20px;
+        }
+    }
+}
