@@ -18,7 +18,7 @@
 
             <button routerLink="/validate/{{project.id}}" class="button--line">Validate images</button>
 
-            <button routerLink="/edit/{{project.id}}" class="button--line" *ngIf="project.created_by === user.id">Edit project</button>
+            <button routerLink="/edit/{{project.id}}" class="button--line" *ngIf="user && (project.created_by === user.id)">Edit project</button>
         </div>
 
         <div class="project__meta">
