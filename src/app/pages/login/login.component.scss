@@ -30,3 +30,10 @@
         color: #333;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .login-block {
+        width: 100%;
+        border: none;
+    }
+}
