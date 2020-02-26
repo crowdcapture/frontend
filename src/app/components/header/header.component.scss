@@ -67,6 +67,14 @@
     align-items: center;
 }
 
+.menu__username {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 165px;
+    text-align: end;
+}
+
 .menu-mobile {
     display: flex;
     width: 100%;

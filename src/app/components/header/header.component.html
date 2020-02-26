@@ -26,7 +26,7 @@
         </div>
 
         <div class="menu__end" *ngIf="user">
-            <span>{{ user.username }}</span>
+            <span class="menu__username">{{ user.username }}</span>
 
             <button (click)="logout()" class="ml">
                 <i class="icon-logout"></i>
