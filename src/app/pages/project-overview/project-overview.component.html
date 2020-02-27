@@ -43,6 +43,10 @@
     </div>
 
     <div class="project__masonry" *ngIf="images && images.images.length > 0">
-        <img *ngFor="let image of images.images; trackBy: trackByFn" src="{{image.urlSmall}}" alt="">
+        <img *ngFor="let image of images.images; trackBy: trackByFn" src="{{image.urlSmall}}" alt="" (click)="lightbox(image)">
     </div>
+</div>
+
+<div class="lightbox" *ngIf="showLightbox" (click)="closeLightbox()">
+    <img src="{{currentLightbox.url}}" alt="">
 </div>
