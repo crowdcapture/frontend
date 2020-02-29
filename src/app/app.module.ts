@@ -32,6 +32,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ValidateComponent } from './pages/validate/validate.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { EditProjectComponent } from './pages/edit-project/edit-project.componen
     AccountPasswordComponent,
     FaqComponent,
     PrivacyComponent,
-    ValidateComponent
+    ValidateComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

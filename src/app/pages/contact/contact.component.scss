@@ -1,0 +1,17 @@
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 136px);
+    width: 100%;
+}
+
+.contact__title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+
+p {
+    margin: 0 0 10px 0;
+}

@@ -23,6 +23,7 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ValidateComponent } from './pages/validate/validate.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 import { TermsComponent } from './pages/terms/terms.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'password/:token',
     component: PasswordComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   },
   {
     path: 'account-password',
