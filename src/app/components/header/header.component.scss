@@ -1,3 +1,5 @@
+@import '../../../assets/styles/variables.scss';
+
 :host {
     z-index: 100;
 }
@@ -23,7 +25,6 @@
         width: 28px;
         height: 28px;
         margin-right: 8px;
-        opacity: 0.5;
     }
 }
 
@@ -52,7 +53,7 @@
         margin-left: 10px;
         height: 35px;
         box-sizing: border-box;
-        border: 2px solid lightgray;
+        border: 2px solid $second-color;
         border-right: none;
         padding: 8px;
         font-family: 'Source Sans Pro', sans-serif;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+@import 'assets/styles/variables.scss';
 @import 'assets/styles/icon.scss';
 @import 'assets/styles/animation.scss';
 
@@ -69,7 +70,7 @@ img {
 
     input, textarea {
         margin-top: 10px;
-        border: 2px solid lightgray;
+        border: 2px solid $second-color;
         padding: 12px 10px;
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 16px;
@@ -139,10 +140,12 @@ button {
     height: 35px;
     padding: 0 20px;
     font-size: 14px;
-    background-color: lightgray;
+    transition: 0.2s;
+    background-color: $main-color;
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
-    border: 2px solid lightgray;
+    border: 2px solid $main-color;
+    color: white;
 
     i {
         margin-right: 4px;
@@ -151,16 +154,27 @@ button {
 
     &:hover:enabled {
         cursor: pointer;
-        background-color: darkgray;
-        border: 2px solid darkgray;
+        background-color: darken($main-color, 10%);
+        border: 2px solid darken($main-color, 10%);
+    }
+
+    &:disabled {
+        background-color: #F0F0F0;
+        border: 2px solid #F0F0F0;
+        color: darkgray;
     }
 }
 
 .button--line {
-    border: 2px solid lightgray;
+    border: 2px solid $main-color;
     background-color: transparent;
     display: flex;
     align-items: center;
+    color: #595959;
+
+    &:hover {
+        color: white;
+    }
 }
 
 .button--group {
@@ -173,15 +187,15 @@ button {
 
 .tag {
     margin-right: 6px;
-    background-color: gray;
+    background-color: $second-color;
     border-radius: 20px;
     padding: 5px 15px;
     font-size: 12px;
-    color: white;
+    color: #595959;
     cursor: pointer;
 
     &:hover {
-        background-color: #666;
+        background-color: darken($second-color, 30%);
     }
 }
 
