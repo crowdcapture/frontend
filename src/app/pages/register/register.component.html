@@ -34,12 +34,17 @@
                     </div>
                 </div>
 
+                <div class="checkbox">
+                    <input type="checkbox" id="agree" [(ngModel)]="agree" [ngModelOptions]="{standalone: true}">
+                    <label for="agree">I agree with the <a routerLink="/terms">Terms of Service</a> and <a routerLink="/privacy">Privacy Policy</a>.</label>
+                </div>
+
                 <div class="form-error" *ngIf="error">
                     <p>{{ error }}</p>
                 </div>
 
                 <div class="form-submit">
-                    <button [disabled]="loading" class="btn btn-primary">Register</button>
+                    <button [disabled]="loading || !agree" class="btn btn-primary">Register</button>
 
                     <a routerLink="/login" class="btn btn-link">Back</a>
                 </div>

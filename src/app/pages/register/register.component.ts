@@ -12,6 +12,7 @@ import { environment } from '../../../environments/environment';
 export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   public loading = false;
+  public agree = false;
   public error: string;
 
   constructor(

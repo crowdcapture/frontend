@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 @import 'assets/styles/variables.scss';
 @import 'assets/styles/icon.scss';
 @import 'assets/styles/animation.scss';
@@ -6,7 +6,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -66,14 +66,15 @@ img {
 
     label {
         margin-top: 10px;
+        font-size: 14px;
     }
 
     input, textarea {
         margin-top: 10px;
         border: 2px solid $second-color;
         padding: 12px 10px;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
 
         &::placeholder {
             color: #A7A9C0;
@@ -113,7 +114,7 @@ img {
         transition: 0.3s;
     
         &:hover:enabled {
-            background-color: darkgray;
+            background-color: darken($main-color, 10%);
         }
 
         &:disabled {
@@ -142,7 +143,7 @@ button {
     font-size: 14px;
     transition: 0.2s;
     background-color: $main-color;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
     border: 2px solid $main-color;
     color: white;
