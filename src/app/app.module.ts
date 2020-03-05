@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,7 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ValidateComponent } from './pages/validate/validate.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SentryService } from './services/sentry.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { ContactComponent } from './pages/contact/contact.component';
   providers: [
     UserService,
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: ErrorHandler, useClass: SentryService }
   ],
   bootstrap: [AppComponent]
 })
