@@ -14,9 +14,19 @@
     min-height: calc(100vh - 136px);
 }
 
+.top {
+    display: flex;
+    width: 100%;
+
+    button {
+        margin-left: auto;
+    }
+}
+
 .projects__title {
     margin: 0;
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 22px;
 }
+

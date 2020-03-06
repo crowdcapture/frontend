@@ -1,6 +1,9 @@
 <section class="projects">
     <div class="container al" *ngIf="projects">
-        <h2 class="projects__title">My projects</h2>
+        <div class="top">
+            <h2 class="projects__title">My projects</h2>
+            <button routerLink="/create">Create project</button>
+        </div>
 
         <div class="projects__none" *ngIf="projects.length === 0">
             <p>You haven't made any projects yet.</p>
