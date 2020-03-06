@@ -1,5 +1,5 @@
 <section class="projects">
-    <div class="container al">
+    <div class="container al" *ngIf="projects">
         <h2 class="projects__title">All projects</h2>
 
         <app-project *ngFor="let project of projects; trackBy: trackByFn" [name]="project.title" [images]="project.image_count" [id]="project.id"></app-project>
