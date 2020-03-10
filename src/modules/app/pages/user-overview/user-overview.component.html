@@ -1,5 +1,5 @@
 <div class="projects">
-    <div class="container al">
+    <div class="container al" *ngIf="user && projects">
         <h1 class="username">{{ user.username }}</h1>
         <span>User since: {{ user.created | date:'longDate' }}</span>
 

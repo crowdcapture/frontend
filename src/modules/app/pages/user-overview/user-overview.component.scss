@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/variables.scss';
+
 .username {
     margin: 0;
     margin-bottom: 10px;
@@ -11,7 +13,7 @@ span {
 .projects {
     display: flex;
     justify-content: center;
-    background-color: lightgray;
+    background-color: $second-color;
     padding: 20px 0;
     min-height: calc(100vh - 136px);
 }
