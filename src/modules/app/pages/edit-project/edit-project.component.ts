@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { Subscription } from 'rxjs';
-import { UserService } from 'src/modules/root/services/user.service';
+import { UserService } from 'src/modules/shared/services/user.service';
 
 @Component({
   selector: 'app-edit-project',

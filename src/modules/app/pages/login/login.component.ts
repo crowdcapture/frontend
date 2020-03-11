@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
-import { UserService } from 'src/modules/root/services/user.service';
+import { UserService } from 'src/modules/shared/services/user.service';
 import { User } from 'src/models/user.model';
 
 @Component({

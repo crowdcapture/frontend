@@ -4,7 +4,7 @@ import { Subscription, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
-import { UserService } from 'src/modules/root/services/user.service';
+import { UserService } from 'src/modules/shared/services/user.service';
 
 @Component({
   selector: 'app-search',

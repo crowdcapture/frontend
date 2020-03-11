@@ -23,7 +23,7 @@ import { ValidateComponent } from './pages/validate/validate.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { AuthGuard } from '../root/services/auth.guard';
+import { AuthGuard } from '../shared/services/auth.guard';
 
 const routes: Routes = [
   {

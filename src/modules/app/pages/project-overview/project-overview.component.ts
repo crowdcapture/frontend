@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { Subscription, fromEvent } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { UserService } from 'src/modules/root/services/user.service';
+import { UserService } from 'src/modules/shared/services/user.service';
 
 @Component({
   selector: 'app-project-overview',
