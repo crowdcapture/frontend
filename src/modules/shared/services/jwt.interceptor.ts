@@ -7,8 +7,6 @@ export class JwtInterceptor implements HttpInterceptor {
     constructor() {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('intercept!');
-        
         const user = JSON.parse(localStorage.getItem('user'));
 
         if (user && user.token) {
