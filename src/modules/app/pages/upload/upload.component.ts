@@ -40,7 +40,7 @@ export class UploadComponent implements OnInit, OnDestroy {
           image.src = url;
 
           image.onload = () => {
-            const imageObj = {
+            const imageObj: any = {
               file: files[i],
               url,
               preview: this.domSanitizer.bypassSecurityTrustUrl(url),
@@ -51,6 +51,12 @@ export class UploadComponent implements OnInit, OnDestroy {
               toolarge: files[i].size > 25000000
             };
 
+            if (this.project.minHeight || this.project.minWidth) {
+              if (this.project.minHeight > imageObj.height || this.project.minWidth > imageObj.width) {
+                imageObj.error = `This image is smaller than the project requirements (${this.project.minWidth} x ${this.project.minHeight})`;
+              }
+            }
+
             this.uploadedFiles.push(imageObj);
           };
       }
@@ -58,7 +64,7 @@ export class UploadComponent implements OnInit, OnDestroy {
 
   async upload() {
     for (const image of this.uploadedFiles) {
-      if (!image.uploading && !image.uploaded && !image.toolarge) {
+      if (!image.uploading && !image.uploaded && !image.toolarge && !image.error) {
         image.uploading = true;
         image.error = null;
 
