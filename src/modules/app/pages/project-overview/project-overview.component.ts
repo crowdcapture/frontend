@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { Subscription, fromEvent } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { UserService } from 'src/modules/shared/services/user.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-project-overview',
@@ -23,10 +24,12 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
   private imageSub: Subscription;
   private userSub: Subscription;
   private scrollSub: Subscription;
+  private oldMeta: string;
 
   constructor(
     private httpClient: HttpClient,
     private userService: UserService,
+    private metaService: Meta,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -45,6 +48,9 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
     });
 
     this.userService.getUser();
+
+    this.oldMeta = this.metaService.getTag('description').content;
+    this.metaService.updateTag({ name: 'description', content: `CrowdCapture project: ${this.project.title}` });
   }
 
   trackByFn(index, item) {
@@ -78,6 +84,8 @@ export class ProjectOverviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.metaService.updateTag({ name: 'description', content: this.oldMeta });
+
     this.projectSub.unsubscribe();
     this.imageSub.unsubscribe();
     this.userSub.unsubscribe();
