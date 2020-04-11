@@ -13,8 +13,11 @@ import { Subscription } from 'rxjs';
 export class UploadComponent implements OnInit, OnDestroy {
   private projectId: string;
   private projectSub: Subscription;
+  private projectPaused = false;
 
   public project: any;
+  public progress = 0;
+  public isUploading = false;
   public uploadedFiles: any[] = [];
   public permission: boolean;
 
@@ -63,31 +66,40 @@ export class UploadComponent implements OnInit, OnDestroy {
   }
 
   async upload() {
-    for (const image of this.uploadedFiles) {
-      if (!image.uploading && !image.uploaded && !image.toolarge && !image.error) {
-        image.uploading = true;
-        image.error = null;
+    let u = 0;
+    this.isUploading = true;
+
+    while (u < this.uploadedFiles.length && !this.projectPaused) {
+      if (!this.uploadedFiles[u].uploading && !this.uploadedFiles[u].uploaded &&
+      !this.uploadedFiles[u].toolarge && !this.uploadedFiles[u].error) {
+
+        this.uploadedFiles[u].uploading = true;
+        this.uploadedFiles[u].error = null;
 
         const formData = new FormData();
-        formData.append('fileArray', image.file, image.file.name);
+        formData.append('fileArray', this.uploadedFiles[u].file, this.uploadedFiles[u].file.name);
 
         try {
           await this.httpClient.post(`${environment.url}/project/${this.projectId}/upload`, formData).toPromise();
 
-          image.uploading = false;
-          image.uploaded = true;
+          this.uploadedFiles[u].uploaded = true;
         } catch (error) {
           if (error.status === 400) {
-            image.error = error.error.message;
+            this.uploadedFiles[u].error = error.error.message;
           } else {
-            image.error = 'Something went wrong.';
+            this.uploadedFiles[u].error = 'Something went wrong.';
+            this.uploadedFiles[u].uploaded = false;
           }
-
-          image.uploading = false;
-          image.uploaded = false;
+        } finally {
+          this.uploadedFiles[u].uploading = false;
+          this.progress = (100 / this.uploadedFiles.length * (u + 1));
         }
       }
+
+      u++;
     }
+
+    this.isUploading = false;
   }
 
   deleteImage(file) {
@@ -100,6 +112,10 @@ export class UploadComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.projectSub.unsubscribe();
+
+    if (this.isUploading) {
+      this.projectPaused = true;
+    }
 
     // Clean up the images because this can cause memory leaks.
     if (this.uploadedFiles.length > 0) {

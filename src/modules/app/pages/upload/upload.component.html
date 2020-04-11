@@ -56,9 +56,24 @@
             </div>
         </div>
 
-        <button (click)="upload()" [disabled]="!permission || uploadedFiles.length === 0">
-            <i class="icon-file_upload"></i>
-            Upload files
+        <button (click)="upload()" [disabled]="!permission || uploadedFiles.length === 0 || isUploading">
+            <ng-container *ngIf="isUploading">
+                <i class="icon-spinner loading"></i>
+                Uploading
+            </ng-container>
+
+            <ng-container *ngIf="!isUploading">
+                <i class="icon-file_upload"></i>
+                Upload files
+            </ng-container>
         </button>
+    </div>
+</div>
+
+<div class="progress" *ngIf="isUploading">
+    <span>Upload progress</span>
+
+    <div class="whole-bar">
+        <div class="progress-bar" [ngStyle]="{'width.%': progress}"></div>
     </div>
 </div>
