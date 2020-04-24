@@ -1,3 +1,7 @@
+/*
+	X-Frame-Options: DENY
+	X-XSS-Protection: 1; mode=block
+	Referrer-Policy: strict-origin
 /*.css
 	cache-control: max-age=604800
 /*.js
