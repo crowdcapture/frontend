@@ -3,7 +3,6 @@
 	X-XSS-Protection: 1; mode=block
 	Referrer-Policy: strict-origin
 	X-Content-Type-Options: nosniff
-	Content-Security-Policy: default-src 'self'; img-src 'self' https://crowdcapture.fra1.digitaloceanspaces.com; report-uri https://sentry.io
 /*.css
 	cache-control: max-age=604800
 /*.js
