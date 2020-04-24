@@ -2,6 +2,8 @@
 	X-Frame-Options: DENY
 	X-XSS-Protection: 1; mode=block
 	Referrer-Policy: strict-origin
+	X-Content-Type-Options: nosniff
+	Content-Security-Policy: default-src 'self'; img-src https://crowdcapture.fra1.digitaloceanspaces.com
 /*.css
 	cache-control: max-age=604800
 /*.js
