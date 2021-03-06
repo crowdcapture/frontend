@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://api.deploy.crowdcapture.org/v1'
+  url: 'https://crowdcapture-backend-qlmzo.ondigitalocean.app/v1'
 };
